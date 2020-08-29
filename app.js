@@ -51,9 +51,25 @@ function calculateBenford(){
         break;
       }
   });
+
+  var array_length=arrayOfLines.length;
+  console.log('array_length:'+array_length);
+
+    var percent0=(total0*100)/array_length;
+    var percent1=(total1*100)/array_length;
+    var percent2=(total2*100)/array_length;
+    var percent3=(total3*100)/array_length;
+    var percent4=(total4*100)/array_length;
+    var percent5=(total5*100)/array_length;
+    var percent6=(total6*100)/array_length;
+    var percent7=(total7*100)/array_length;
+    var percent8=(total8*100)/array_length;
+    var percent9=(total9*100)/array_length;
+
   var result='total0='+total0+'<br />total1='+total1+'<br />total2='+total2+'<br />total3='+total3+'<br />total4='+total4+'<br />total5='+total5+'<br />total6='+total6+'<br />total7='+total7+'<br />total8='+total8+'<br />total9='+total9;
   $('.result-area2').html(result);
 
+  console.log('result:'+result);
   //line
   var ctxL = document.getElementById("lineChart").getContext('2d');
   var myLineChart = new Chart(ctxL, {
@@ -73,7 +89,7 @@ function calculateBenford(){
   },
   {
   label: "Your dataset",
-  data: [total1, total2, total3, total4, total5, total6, total7, total8, total9],
+  data: [percent1, percent2, percent3, percent4, percent5, percent6, percent7, percent8, percent9],
   backgroundColor: [
   'rgba(0, 137, 132, .2)',
   ],
