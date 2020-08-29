@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Benford's Law Calculation Tool</title>
+  <link rel="shortcut icon" href="files/fav.ico" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Styles -->
+  <link href="css/style.min.css" rel="stylesheet">
+  <!-- Styles -->
+  <link href="css/custom.css" rel="stylesheet">
+  <style>
+
+    .map-container{
+overflow:hidden;
+padding-bottom:56.25%;
+position:relative;
+height:0;
+}
+.map-container iframe{
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}
+  </style>
+</head>
+
+<body class="grey lighten-3">
+
+  <!--Main Navigation-->
+  <header>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+      <div class="container-fluid">
+
+        <!-- Brand -->
+        <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
+          <strong class="blue-text">Benford's Law Calculation Tool</strong>
+        </a>
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Left -->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link waves-effect" href="#">Dashboard
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About
+                BLCT</a>
+            </li>
+          </ul>
+
+          <!-- Right -->
+          <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+              <a href="https://www.facebook.com/mfarukalicioglu" class="nav-link waves-effect" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://twitter.com/mazmahorian" class="nav-link waves-effect" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://github.com/pharuck/blct" class="nav-link border border-light rounded waves-effect"
+                target="_blank">
+                <i class="fab fa-github mr-2"></i>BLCT GitHub
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Sidebar -->
+    <div class="sidebar-fixed position-fixed">
+
+      <a class="logo-wrapper waves-effect">
+        <img src="img/logo/blct-logo.png" class="img-fluid" alt="blct logo">
+      </a>
+
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item active waves-effect">
+          <i class="fas fa-chart-area mr-3"></i>Dashboard
+        </a>
+        <a href="#" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-list-alt mr-3"></i>Datasets</a>
+        <a href="#" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-calculator mr-3"></i>About BLCT</a>
+        <a href="#" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-tree mr-3"></i>Sources</a>
+      </div>
+
+    </div>
+    <!-- Sidebar -->
+
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main class="pt-5 mx-lg-5">
+    <div class="container-fluid mt-5">
+
+      <!-- Heading -->
+      <div class="card mb-4 wow fadeIn">
+
+        <!--Card content-->
+        <div class="card-body d-sm-flex justify-content-between">
+
+          <h4 class="mb-2 mb-sm-0 pt-1">
+            <a href="../" target="_blank">Home Page</a>
+            <span>/</span>
+            <span>Dashboard</span>
+          </h4>
+
+          <div class="d-flex justify-content-center">
+
+          </div>
+
+        </div>
+
+      </div>
+      <!-- Heading -->
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!--Card-->
+          <div class="card">
+
+            <!-- Card header -->
+            <div class="card-header text-center">
+              Dataset
+            </div>
+
+            <!--Card content-->
+            <div class="card-body">
+
+              <textarea id="numbers" onchange="javascript:calculateBenford();" class="numbers-area" placeholder="enter your dataset">11.215.130
+5.104.047
+4.638.350
+4.352.932
+3.769.846
+3.632.094
+3.043.128
+3.022.821
+2.898.859
+2.817.522
+2.541.101
+2.272.891
+1.901.271
+1.660.126
+1.643.049
+1.584.743
+1.548.351
+1.475.091
+1.435.716
+1.366.010
+1.348.872
+1.344.436
+1.278.933
+1.264.968
+1.262.757
+1.237.157
+1.179.484
+1.123.365
+1.094.199
+1.087.237
+1.055.728
+1.049.768
+1.031.223
+1.030.655
+996.400
+979.458
+970.602
+968.524
+942.769
+940.513
+923.348
+905.649
+902.986
+895.900
+886.519
+853.730
+807.409
+801.137
+794.039
+793.841
+782.442
+780.296
+775.694
+756.432
+742.090
+740.038
+736.978
+699.683
+686.562
+643.975
+627.761
+617.885
+606.223
+606.184
+587.937
+566.241
+564.826
+542.267
+534.020
+527.749
+527.223
+525.927
+525.047
+523.722
+508.320
+505.711
+503.563</textarea>
+              <button type="button" class="btn btn-primary" onclick="javascript:calculateBenford();">send</button>
+              <button type="button" class="btn btn-secondary" onclick="javascript:clearTextarea();">clear</button>
+            </div>
+
+          </div>
+          <!--/.Card-->
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!--Card-->
+          <div class="card mb-4">
+
+            <!-- Card header -->
+            <div class="card-header text-center">
+              chart
+            </div>
+
+            <!--Card content-->
+            <div class="card-body">
+
+              <canvas id="lineChart"></canvas>
+
+            </div>
+
+          </div>
+          <!--/.Card-->
+
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
+
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Benford's Law Calculation Tool Custom JavaScript -->
+  <script type="text/javascript" src="js/app.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+  </script>
+
+  <!--Google Maps-->
+
+</body>
+
+</html>
