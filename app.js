@@ -66,10 +66,7 @@ function calculateBenford(){
     var percent8=(total8*100)/array_length;
     var percent9=(total9*100)/array_length;
 
-  var result='total0='+total0+'<br />total1='+total1+'<br />total2='+total2+'<br />total3='+total3+'<br />total4='+total4+'<br />total5='+total5+'<br />total6='+total6+'<br />total7='+total7+'<br />total8='+total8+'<br />total9='+total9;
-  $('.result-area2').html(result);
 
-  console.log('result:'+result);
   //line
   var ctxL = document.getElementById("lineChart").getContext('2d');
   var myLineChart = new Chart(ctxL, {
@@ -112,7 +109,17 @@ function clearTextarea() {
     calculateBenford()
 }
 
+function textarea_height(){
+  var lc_h=$('.line-chart-area').height();
+  $('.numbers-card-area').height(lc_h);
+}
+
 $(document).ready(function(){
     $("#numbers").focus();
-    calculateBenford()
+    calculateBenford();
+    textarea_height();
+});
+
+$( window ).resize(function() {
+  textarea_height();
 });
