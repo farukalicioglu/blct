@@ -17,22 +17,6 @@
   <link href="css/style.min.css" rel="stylesheet">
   <!-- Styles -->
   <link href="css/custom.css" rel="stylesheet">
-  <style>
-
-    .map-container{
-overflow:hidden;
-padding-bottom:56.25%;
-position:relative;
-height:0;
-}
-.map-container iframe{
-left:0;
-top:0;
-height:100%;
-width:100%;
-position:absolute;
-}
-  </style>
 </head>
 
 <body class="grey lighten-3">
@@ -66,18 +50,24 @@ position:absolute;
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About
+              <a class="nav-link waves-effect" href="#" target="_blank">
+                Datasets</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="https://en.wikipedia.org/wiki/Benford%27s_law" target="_blank">
+                What is Benford's Law?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="#" target="_blank">About
                 BLCT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="#" target="_blank">Sources</a>
             </li>
           </ul>
 
           <!-- Right -->
           <ul class="navbar-nav nav-flex-icons">
-            <li class="nav-item">
-              <a href="https://www.facebook.com/mfarukalicioglu" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
             <li class="nav-item">
               <a href="https://twitter.com/mazmahorian" class="nav-link waves-effect" target="_blank">
                 <i class="fab fa-twitter"></i>
@@ -110,6 +100,8 @@ position:absolute;
         </a>
         <a href="#" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-list-alt mr-3"></i>Datasets</a>
+        <a href="https://en.wikipedia.org/wiki/Benford%27s_law" target="_blank" class="list-group-item list-group-item-action waves-effect" style="font-size:14px;">
+            <i class="fas fa-question-circle mr-3"></i>What is Benford's Law?</a>
         <a href="#" class="list-group-item list-group-item-action waves-effect">
           <i class="fas fa-calculator mr-3"></i>About BLCT</a>
         <a href="#" class="list-group-item list-group-item-action waves-effect">
@@ -133,8 +125,6 @@ position:absolute;
         <div class="card-body d-sm-flex justify-content-between">
 
           <h4 class="mb-2 mb-sm-0 pt-1">
-            <a href="../" target="_blank">Home Page</a>
-            <span>/</span>
             <span>Dashboard</span>
           </h4>
 
@@ -158,11 +148,11 @@ position:absolute;
 
             <!-- Card header -->
             <div class="card-header text-center">
-              Dataset
+              Your Dataset
             </div>
 
             <!--Card content-->
-            <div class="card-body">
+            <div class="card-body numbers-card-area">
 
               <textarea id="numbers" onchange="javascript:calculateBenford();" class="numbers-area" placeholder="enter your dataset">11.215.130
 5.104.047
@@ -241,8 +231,10 @@ position:absolute;
 508.320
 505.711
 503.563</textarea>
-              <button type="button" class="btn btn-primary" onclick="javascript:calculateBenford();">send</button>
-              <button type="button" class="btn btn-secondary" onclick="javascript:clearTextarea();">clear</button>
+<div class="buttons">
+    <button type="button" class="btn btn-primary send-button" onclick="javascript:calculateBenford();">send</button>
+    <button type="button" class="btn btn-secondary" onclick="javascript:clearTextarea();">clear</button>
+</div>
             </div>
 
           </div>
@@ -259,11 +251,11 @@ position:absolute;
 
             <!-- Card header -->
             <div class="card-header text-center">
-              chart
+              Line Chart
             </div>
 
             <!--Card content-->
-            <div class="card-body">
+            <div class="card-body line-chart-area">
 
               <canvas id="lineChart"></canvas>
 
@@ -278,7 +270,6 @@ position:absolute;
 
       </div>
       <!--Grid row-->
-
 
     </div>
   </main>
@@ -308,7 +299,15 @@ position:absolute;
 
   </script>
 
-  <!--Google Maps-->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145535921-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-145535921-1');
+  </script>
 
 </body>
 
