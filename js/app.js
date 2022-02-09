@@ -16,8 +16,6 @@ function calculateBenford(){
       total[firstLetterOfNumber]++;
   });
 
-  var linesLength=arrayOfLines.length;
-
   for(let i=0;i<10;i++){
       percent[i] = ((total[i]*100)/arrayOfLines.length).toFixed(2);
   }
@@ -29,23 +27,23 @@ function calculateBenford(){
   var myLineChart = new Chart(ctxL, {
   type: 'line',
   data: {
-  labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
-  datasets: [{
-  label: "Benford's Law",
-  data: [30.1, 17.6, 12.5, 9.7, 7.9, 6.7, 5.8, 5.1, 4.6],
-  backgroundColor: [
-  'rgba(105, 0, 132, .2)',
-  ],
-  borderColor: [
-  'rgba(200, 99, 132, .7)',
-  ],
-  borderWidth: 2
+    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+    datasets: [{
+    label: "Benford's Law",
+    data: [30.1, 17.6, 12.5, 9.7, 7.9, 6.7, 5.8, 5.1, 4.6],
+    backgroundColor: [
+    'rgba(105, 0, 132, .2)',
+    ],
+    borderColor: [
+    'rgba(200, 99, 132, .7)',
+    ],
+    borderWidth: 2
   },
   {
-  label: "Your dataset",
-  data: percent,
-  backgroundColor: [
-  'rgba(0, 137, 132, .2)',
+    label: "Your dataset",
+    data: percent,
+    backgroundColor: [
+    'rgba(0, 137, 132, .2)',
   ],
   borderColor: [
   'rgba(0, 10, 130, .7)',
