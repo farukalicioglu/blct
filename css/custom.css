@@ -1,0 +1,18 @@
+.numbers-area{
+	width: 100%;
+	height: 80%;
+	font-size: 32px;
+
+  display: inline-block;
+  border: solid 1px #b2babf;
+  font-size: 12px;
+  padding: 1%;
+}
+.buttons{
+	position: absolute;
+	bottom:0;
+	width: 100%;
+}
+.navbar-brand{
+	font-size:1rem;
+}
